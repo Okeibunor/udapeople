@@ -222,7 +222,7 @@ jobs:
       steps:
         - checkout
         - add_ssh_keys:
-            fingerprints: ["b5:2f:43:13:38:05:f2:cd:72:a8:a5:24:75:80:16:ac"]
+            fingerprints: ["f9:ce:2a:2c:5b:bf:51:5f:ed:e9:e2:34:06:a8:32:4b:da:04:a0:67"]
         - attach_workspace:
             at: ~/
         - install_ansible
@@ -302,7 +302,7 @@ jobs:
       - install_nodejs
       - install_ansible
       - add_ssh_keys:
-          fingerprints: ["b5:2f:43:13:38:05:f2:cd:72:a8:a5:24:75:80:16:ac"]
+          fingerprints: ["f9:ce:2a:2c:5b:bf:51:5f:ed:e9:e2:34:06:a8:32:4b:da:04:a0:67"]
       - run:
           name: Install dependencies
           command: |
@@ -339,7 +339,7 @@ jobs:
       - install_nodejs
       - install_ansible
       - add_ssh_keys:
-          fingerprints: ["b5:2f:43:13:38:05:f2:cd:72:a8:a5:24:75:80:16:ac"]
+          fingerprints: ["f9:ce:2a:2c:5b:bf:51:5f:ed:e9:e2:34:06:a8:32:4b:da:04:a0:67"]
       - attach_workspace:
           at: ~/
       - run:
@@ -449,7 +449,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["b5:2f:43:13:38:05:f2:cd:72:a8:a5:24:75:80:16:ac"]
+          fingerprints: ["f9:ce:2a:2c:5b:bf:51:5f:ed:e9:e2:34:06:a8:32:4b:da:04:a0:67"]
       - run: 
           name: Install Dependencies
           command: |
