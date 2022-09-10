@@ -223,8 +223,8 @@ jobs:
         - checkout
         - add_ssh_keys:
             fingerprints: ["e0:15:b8:dd:15:dd:1c:e8:fb:13:04:ec:a8:a7:5a:cd"]
-        # - attach_workspace:
-        #     at: ~/
+        - attach_workspace:
+            at: ~/
         # - install_ansible
         # - install_awscli    
         - restore_cache:
@@ -233,6 +233,7 @@ jobs:
             name: Install dependencies
             command: |
               apk add --update ansible
+              apk add --update awscli 
         - run:
             name: Configure Server
             command: |
