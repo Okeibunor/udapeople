@@ -1,33 +1,33 @@
 ---
-- name: "Add Node.js from Nodesource"
-  become: true
-  apk:
-    update_cache: true
+# - name: "Add Node.js from Nodesource"
+#   become: true
+#   apk:
+#     update_cache: true
 
-- name: "upgrade apk packages"
-  become: true
-  apk:
-    upgrade: yes 
+# - name: "upgrade apk packages"
+#   become: true
+#   apk:
+#     upgrade: yes 
 
-- name: "remove stale dependencies"
-  become: true 
-  apk: 
-    autoremove: yes 
+# - name: "remove stale dependencies"
+#   become: true 
+#   apk: 
+#     autoremove: yes 
 
-- name: "install dependencies [nodejs and npm]"
-  become: true 
-  apk: 
-    name: ["nodejs", "npm"]
-    state: latest 
-    update_cache: yes
+# - name: "install dependencies [nodejs and npm]"
+#   become: true 
+#   apk: 
+#     name: ["nodejs", "npm"]
+#     state: latest 
+#     update_cache: yes
 
-- name: "Install PM2 Globally"
-  become: true
-  npm:
-    name: pm2
-    global: yes
-    production: yes 
-    state: present
+# - name: "Install PM2 Globally"
+#   become: true
+#   npm:
+#     name: pm2
+#     global: yes
+#     production: yes 
+#     state: present
 
 - name: "move env variables to /etc/profile.d/"
   become: true
