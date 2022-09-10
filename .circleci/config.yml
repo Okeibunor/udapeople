@@ -218,7 +218,7 @@ jobs:
 
   configure-infrastructure:
       docker:
-        - image: python:3.10-alpine3.16
+        - image: cimg/base:stable
       steps:
         - checkout
         - add_ssh_keys:
@@ -232,7 +232,7 @@ jobs:
         - run: 
             name: Install dependencies
             command: |
-              apk add --update --no-cache ansible tar gzip aws-cli openssh
+              apk add --update --no-cache ansible tar gzip aws-cli
         - run:
             name: Configure Server
             command: |
