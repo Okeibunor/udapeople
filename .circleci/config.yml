@@ -251,8 +251,8 @@ jobs:
             root: ~/
             paths:
               - project/backend
-        # - destroy-environment
-        # - revert-migrations  
+        - destroy-environment
+        - revert-migrations  
 
   run-migrations:
     docker:
