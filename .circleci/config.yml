@@ -225,15 +225,12 @@ jobs:
             fingerprints: ["e0:15:b8:dd:15:dd:1c:e8:fb:13:04:ec:a8:a7:5a:cd"]
         - attach_workspace:
             at: ~/
-        # - install_ansible
-        # - install_awscli    
         - restore_cache:
             keys: [backend-build]
         - run: 
             name: Install dependencies
             command: |
-              apk add --update ansible
-              apk add --update awscli 
+              apk add --update --no-cache ansible tar gzip aws-cli openssh
         - run:
             name: Configure Server
             command: |
@@ -249,6 +246,7 @@ jobs:
               echo TYPEORM_MIGRATIONS_DIR=$TYPEORM_MIGRATIONS_DIR >> backend/.env
               cat backend/.env
 
+              pwd
               cd .circleci/ansible
               cat inventory.txt
               ansible-playbook -i inventory.txt configure-server.yml
