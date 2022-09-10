@@ -229,10 +229,6 @@ jobs:
         - install_awscli    
         - restore_cache:
             keys: [backend-build]
-        - run: 
-            name: Install dependencies
-            command: |
-              apk add --update --no-cache ansible tar gzip aws-cli
         - run:
             name: Configure Server
             command: |
