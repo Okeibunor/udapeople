@@ -1,22 +1,22 @@
 ---
 - name: "Add Node.js from Nodesource"
   become: true
-  apt:
+  apk:
     update_cache: true
 
-- name: "upgrade apt packages"
+- name: "upgrade apk packages"
   become: true
-  apt:
+  apk:
     upgrade: yes 
 
 - name: "remove stale dependencies"
   become: true 
-  apt: 
+  apk: 
     autoremove: yes 
 
 - name: "install dependencies [nodejs and npm]"
   become: true 
-  apt: 
+  apk: 
     name: ["nodejs", "npm"]
     state: latest 
     update_cache: yes
