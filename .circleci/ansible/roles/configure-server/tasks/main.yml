@@ -14,17 +14,17 @@
 #   apk: 
 #     autoremove: yes 
 
-- name: "install dependencies [nodejs and npm]"
-  become: true 
-  raw: apk -y update && apk install -y nodejs
+# - name: "install dependencies [nodejs and npm]"
+#   become: true 
+#   raw: apk add nodejs
 
-- name: "Install PM2 Globally"
-  become: true
-  apt:
-    name: pm2
-    global: yes
-    production: yes 
-    state: present
+# - name: "Install PM2 Globally"
+#   become: true
+#   apt:
+#     name: pm2
+#     global: yes
+#     production: yes 
+#     state: present
 
 - name: "move env variables to /etc/profile.d/"
   become: true
